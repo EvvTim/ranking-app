@@ -1,11 +1,16 @@
 import './App.css';
 
-function App() {
+import React, { useState } from 'react';
+import Table from './Table/Table';
+import players from './data/players';
+
+const App = () => {
+  const [playersData] = useState([...players]);
   return (
-    <div className="App">
-      app
+    <div>
+      <Table data={playersData} rowsPerPage={4} />
     </div>
   );
-}
+};
 
 export default App;
