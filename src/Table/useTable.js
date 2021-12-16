@@ -10,4 +10,9 @@ const calculateRange = (data, rowsPerPage) => {
   return range;
 };
 
+// calculate rows per page
+const sliceData = (data, page, rowsPerPage) => {
+  return data.slice((page - 1) * rowsPerPage, page * rowsPerPage);
+};
+
 export default useTable;
