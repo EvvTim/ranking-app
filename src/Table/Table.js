@@ -22,7 +22,7 @@ const Table = ({ data, rowsPerPage }) => {
             <tr key={uniqid()}>
               <td>{el.name}</td>
               <td>{el.points}</td>
-              <td>{el.color}</td>
+              <td style={{ backgroundColor: el.color }} />
             </tr>
           ))}
         </tbody>
