@@ -10,7 +10,7 @@
 .table-section {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
 }
 
@@ -20,12 +20,38 @@
     color: white;
 }
 
+table {
+    border-collapse: collapse;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0 2px 4px -1px;
+}
+
 th,td {
     padding: 15px 10px;
 }
 
-tr:nth-child(2n) {
-    background-color: #eaf3f3;
+thead th {
+    color: white;
+    font-weight: 300;
+}
+
+thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: #f3f3f3;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+tbody tr:last-child {
+    border-bottom: 3px solid #167f92;
 }
 .page-buttons {
     display: flex;
@@ -35,12 +61,14 @@ tr:nth-child(2n) {
     margin-top: 20px;
     column-gap: 10px;
     row-gap: 10px;
+
 }
 
 .page-buttons button {
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
 }
 
 .activeButton {
@@ -52,5 +80,30 @@ tr:nth-child(2n) {
     color: gray;
     background: white;
 }
+
+.header-name-cell,
+.header-points-cell{
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    right: 0;
+    color: transparent;
+    padding: 0 10px;
+}
+
+.header-name-cell:hover,
+.header-points-cell:hover{
+    background-color: #167f92a3;
+}
+
+.header-name-cell:hover .arrow,
+.header-name-cell:focus .arrow,
+.header-points-cell:hover .arrow,
+.header-points-cell:focus .arrow {
+    color: white;
+}
+
 
 
