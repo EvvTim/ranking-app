@@ -7,7 +7,7 @@ import players from './data/players';
 const App = () => {
   const [playersData] = useState([...players]);
   return (
-    <div>
+    <div className="app">
       <Table data={playersData} rowsPerPage={4} />
     </div>
   );

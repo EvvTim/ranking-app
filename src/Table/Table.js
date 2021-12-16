@@ -8,7 +8,7 @@ const Table = ({ data, rowsPerPage }) => {
   const { tableRows, range } = useTable(data, page, rowsPerPage);
 
   return (
-    <>
+    <section className="table-section">
       <table>
         <thead>
           <tr>
@@ -20,15 +20,15 @@ const Table = ({ data, rowsPerPage }) => {
         <tbody>
           {tableRows.map((el) => (
             <tr key={uniqid()}>
-              <td>{el.name}</td>
-              <td>{el.points}</td>
-              <td style={{ backgroundColor: el.color }} />
+              <td className="name-cell">{el.name}</td>
+              <td className="points-cell">{el.points}</td>
+              <td className="color-cell" style={{ backgroundColor: el.color }} />
             </tr>
           ))}
         </tbody>
       </table>
       <TablePages rage={range} tableRows={tableRows} setPage={setPage} page={page} />
-    </>
+    </section>
   );
 };
 

@@ -9,9 +9,13 @@ const TablePages = ({ rage, setPage, page, tableRows }) => {
     console.log('length', tableRows.length);
   }, [page, tableRows, setPage]);
   return (
-    <div>
+    <div className="page-buttons">
       {rage.map((el) => (
-        <button key={uniqid()} onClick={() => setPage(el)} type="button">
+        <button
+          className={page === el ? 'activeButton' : 'inactiveButton'}
+          key={uniqid()}
+          onClick={() => setPage(el)}
+          type="button">
           {el}
         </button>
       ))}
