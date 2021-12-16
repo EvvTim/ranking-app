@@ -1,14 +1,23 @@
 import './App.css';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Table from './Table/Table';
-import players from './data/players';
+import useSort from './hooks/useSort';
 
 const App = () => {
-  const [playersData] = useState([...players]);
+  const { playersData, sortByPointsHandler, sortByNameHandler, sortByName, sortByPoints } =
+    useSort();
+
   return (
     <div className="app">
-      <Table data={playersData} rowsPerPage={4} />
+      <Table
+        data={playersData}
+        rowsPerPage={5}
+        sortByName={() => sortByNameHandler()}
+        sortByPoints={() => sortByPointsHandler()}
+        pointsCellArrow={sortByPoints ? '↑' : '↓'}
+        nameCellArrow={sortByName ? '↑' : '↓'}
+      />
     </div>
   );
 };

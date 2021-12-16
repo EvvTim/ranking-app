@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import uniqid from 'uniqid';
-import useTable from './useTable';
+import useTable from '../hooks/useTable';
 import TablePages from './TablePages';
 
-const Table = ({ data, rowsPerPage }) => {
+const Table = ({ data, rowsPerPage, sortByName, sortByPoints, nameCellArrow, pointsCellArrow }) => {
   const [page, setPage] = useState(1);
   const { tableRows, range } = useTable(data, page, rowsPerPage);
 
@@ -12,8 +12,13 @@ const Table = ({ data, rowsPerPage }) => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Points</th>
+            <th onClick={sortByName} className="header-name-cell">
+              <span>Name</span> <span className="arrow">{nameCellArrow}</span>
+            </th>
+            <th onClick={sortByPoints} className="header-points-cell">
+              <span>Points</span>
+              <span className="arrow">{pointsCellArrow}</span>
+            </th>
             <th>Color</th>
           </tr>
         </thead>
