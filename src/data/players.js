@@ -1,43 +1,43 @@
 export default [
   {
     id: 1,
-    name: 'Jan Kowalski',
+    name: 'shaquille.oatmeal',
     points: 22,
-    color: 'blue'
+    color: '#fadadd'
   },
   {
     id: 2,
-    name: 'John Doe',
+    name: 'hoosier-daddy',
     points: 33,
-    color: 'green'
+    color: '#052522'
   },
   {
     id: 3,
-    name: 'Vasia Pupkin',
+    name: 'averagestudent',
     points: 55,
-    color: 'yellow'
+    color: '#ff4f00'
   },
   {
     id: 4,
-    name: 'Piotr Kowalski',
+    name: 'cute.as.ducks',
     points: 90,
-    color: 'red'
+    color: '#00a2ff'
   },
   {
     id: 5,
-    name: 'John Smith',
+    name: 'JohnSmith',
     points: 27,
-    color: 'purple'
+    color: '#badbad'
   },
   {
     id: 6,
-    name: 'Ewa Nowak',
+    name: 'VasiaPupkin',
     points: 38,
     color: 'tomato'
   },
   {
     id: 7,
-    name: 'Paweł',
+    name: 'JanKowalski',
     points: 3,
     color: 'fuchsia'
   },
@@ -45,12 +45,18 @@ export default [
     id: 8,
     name: 'xxx',
     points: 6,
-    color: 'black'
+    color: '#d299ef'
   },
   {
     id: 9,
     name: 'yyy',
     points: 0,
-    color: 'azure'
+    color: '#4b5320'
+  },
+  {
+    id: 10,
+    name: 'HairyPoppins',
+    points: -1,
+    color: '#69e3ff'
   }
 ];
