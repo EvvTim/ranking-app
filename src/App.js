@@ -5,12 +5,12 @@ import Table from './Table/Table';
 import useSort from './hooks/useSort';
 import SearchBar from './SearchBar/SearchBar';
 import useSearch from './hooks/useSearch';
+import useData from './hooks/useData';
 
 const App = () => {
-  const { playersData, sortByPointsHandler, sortByNameHandler, sortByName, sortByPoints } =
-    useSort();
-  const { handleSearch, filter } = useSearch(playersData);
-  console.log('filter', filter);
+  const { data } = useData();
+  const { sortByPointsHandler, sortByNameHandler, sortByName, sortByPoints } = useSort(data);
+  const { handleSearch, filter } = useSearch(data);
 
   return (
     <div className="app">

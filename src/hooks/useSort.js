@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import players from '../data/players';
 
-const useSort = () => {
-  const [playersData, setPlayersData] = useState([]);
+const useSort = (data) => {
+  const [playersData, setPlayersData] = useState([data]);
   const [sortByName, setSortByName] = useState(false);
   const [sortByPoints, setSortByPoints] = useState(true);
 
