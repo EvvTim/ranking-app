@@ -1,50 +1,50 @@
-export default [
+const players = [
   {
     id: 1,
     name: 'shaquille.oatmeal',
-    points: 22,
+    points: 0,
     color: '#fadadd'
   },
   {
     id: 2,
     name: 'hoosier-daddy',
-    points: 33,
+    points: 0,
     color: '#052522'
   },
   {
     id: 3,
     name: 'averagestudent',
-    points: 55,
+    points: 0,
     color: '#ff4f00'
   },
   {
     id: 4,
     name: 'cute.as.ducks',
-    points: 90,
+    points: 0,
     color: '#00a2ff'
   },
   {
     id: 5,
     name: 'JohnSmith',
-    points: 27,
+    points: 0,
     color: '#badbad'
   },
   {
     id: 6,
     name: 'VasiaPupkin',
-    points: 38,
+    points: 0,
     color: 'tomato'
   },
   {
     id: 7,
     name: 'JanKowalski',
-    points: 3,
+    points: 0,
     color: 'fuchsia'
   },
   {
     id: 8,
     name: 'xxx',
-    points: 6,
+    points: 0,
     color: '#d299ef'
   },
   {
@@ -56,127 +56,129 @@ export default [
   {
     id: 10,
     name: 'HairyPoppins',
-    points: -1,
+    points: 0,
     color: '#69e3ff'
   },
   {
-    id: 1,
+    id: 11,
     name: 'shaquille.oatmeal',
-    points: 22,
+    points: 0,
     color: '#fadadd'
   },
   {
-    id: 2,
+    id: 12,
     name: 'hoosier-daddy',
-    points: 33,
+    points: 0,
     color: '#052522'
   },
   {
-    id: 3,
+    id: 13,
     name: 'averagestudent',
-    points: 55,
+    points: 0,
     color: '#ff4f00'
   },
   {
-    id: 4,
+    id: 14,
     name: 'cute.as.ducks',
-    points: 90,
+    points: 0,
     color: '#00a2ff'
   },
   {
-    id: 5,
+    id: 15,
     name: 'JohnSmith',
-    points: 27,
+    points: 0,
     color: '#badbad'
   },
   {
-    id: 6,
+    id: 16,
     name: 'VasiaPupkin',
-    points: 38,
+    points: 0,
     color: 'tomato'
   },
   {
-    id: 7,
+    id: 17,
     name: 'JanKowalski',
-    points: 3,
+    points: 0,
     color: 'fuchsia'
   },
   {
-    id: 8,
+    id: 18,
     name: 'xxx',
-    points: 6,
+    points: 0,
     color: '#d299ef'
   },
   {
-    id: 9,
+    id: 19,
     name: 'yyy',
     points: 0,
     color: '#4b5320'
   },
   {
-    id: 10,
+    id: 20,
     name: 'HairyPoppins',
-    points: -1,
+    points: 0,
     color: '#69e3ff'
   },
   {
-    id: 1,
+    id: 21,
     name: 'shaquille.oatmeal',
-    points: 22,
+    points: 0,
     color: '#fadadd'
   },
   {
-    id: 2,
+    id: 22,
     name: 'hoosier-daddy',
-    points: 33,
+    points: 0,
     color: '#052522'
   },
   {
-    id: 3,
+    id: 23,
     name: 'averagestudent',
-    points: 55,
+    points: 0,
     color: '#ff4f00'
   },
   {
-    id: 4,
+    id: 24,
     name: 'cute.as.ducks',
-    points: 90,
+    points: 0,
     color: '#00a2ff'
   },
   {
-    id: 5,
+    id: 25,
     name: 'JohnSmith',
-    points: 27,
+    points: 0,
     color: '#badbad'
   },
   {
-    id: 6,
+    id: 26,
     name: 'VasiaPupkin',
-    points: 38,
+    points: 0,
     color: 'tomato'
   },
   {
-    id: 7,
+    id: 27,
     name: 'JanKowalski',
-    points: 3,
+    points: 0,
     color: 'fuchsia'
   },
   {
-    id: 8,
+    id: 28,
     name: 'xxx',
-    points: 6,
+    points: 0,
     color: '#d299ef'
   },
   {
-    id: 9,
+    id: 29,
     name: 'yyy',
     points: 0,
     color: '#4b5320'
   },
   {
-    id: 10,
+    id: 30,
     name: 'HairyPoppins',
-    points: -1,
+    points: 0,
     color: '#69e3ff'
   }
 ];
+
+module.exports = players;
