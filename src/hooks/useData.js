@@ -6,15 +6,24 @@ const useData = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch('http://localhost:9999');
+  //     const json = await response.json();
+  //     setData(json);
+  //     setLoading(false);
+  //   };
+  //   fetchData();
+  // }, []);
+
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('http://localhost:9999');
-      const json = await response.json();
-      setData(json);
+    socket.on('score', (score) => {
+      setData(score);
       setLoading(false);
-    };
-    fetchData();
+    });
   }, []);
+
+  console.log(data);
 
   return { data, loading };
 };
