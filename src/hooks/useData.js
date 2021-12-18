@@ -1,24 +1,22 @@
 import { useEffect, useState } from 'react';
-import players from '../data/players';
+import socket from '../socket';
+// import players from '../data/players';
 
 const useData = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        setData(players);
-        setLoading(false);
-      } catch (err) {
-        setError(error);
-      }
+      const response = await fetch('http://localhost:9999');
+      const json = await response.json();
+      setData(json);
+      setLoading(false);
     };
     fetchData();
   }, []);
 
-  return { data, loading, error };
+  return { data, loading };
 };
 
 export default useData;
