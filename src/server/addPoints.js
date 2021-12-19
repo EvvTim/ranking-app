@@ -1,7 +1,3 @@
-const players = require('../data/players');
-
-const playersData = [...players];
-
 const setRandomIndex = (min, max) => {
   const rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
@@ -18,9 +14,12 @@ const addPoints = (data, points) => {
   const playerId = chooseRandomPlayer(data);
   const player = data.find((player) => player.id === playerId);
   player.points += points;
-  return data.splice(data.indexOf(player - 1), 1, player);
+  return {
+    id: player.id,
+    points: player.points,
+    name: player.name,
+    color: player.color
+  };
 };
 
-setInterval(() => {
-  addPoints(playersData, 1);
-}, 1000);
+module.exports = addPoints;
