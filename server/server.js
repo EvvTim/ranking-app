@@ -4,7 +4,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-const players = require('../data/players');
+const players = require('../src/data/players');
 const addPoints = require('./addPoints');
 
 app.get('/', (req, res) => {
