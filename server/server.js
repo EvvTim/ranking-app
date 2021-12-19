@@ -6,6 +6,7 @@ const io = require('socket.io')(server);
 
 const players = require('../src/data/players');
 const addPoints = require('./addPoints');
+const randomPoints = require('./randomPoints');
 
 app.get('/', (req, res) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -15,16 +16,8 @@ app.get('/', (req, res) => {
   res.end();
 });
 
-io.on('connection', (socket) => {
-  console.log('connected', socket.id);
-});
-
-io.on('connection', (socket) => {
-  socket.emit('score', players);
-});
-
 setInterval(() => {
-  io.emit('newData', addPoints(players, 1));
+  io.emit('newData', addPoints(players, randomPoints(0, 9)));
 }, 1000);
 
 server.listen(9999, (err) => {
