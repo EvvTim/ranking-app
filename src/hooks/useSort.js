@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import players from '../data/players';
 
-const useSort = () => {
-  const [playersData, setPlayersData] = useState([]);
+const useSort = (data) => {
+  const [playersData, setPlayersData] = useState([data]);
   const [sortByName, setSortByName] = useState(false);
   const [sortByPoints, setSortByPoints] = useState(true);
 
@@ -16,17 +15,17 @@ const useSort = () => {
 
   useEffect(() => {
     if (sortByName) {
-      setPlayersData([...players.sort((a, b) => a.name.localeCompare(b.name))]);
+      setPlayersData([...data.sort((a, b) => a.name.localeCompare(b.name))]);
     } else if (!sortByName) {
-      setPlayersData([...players.sort((a, b) => b.name.localeCompare(a.name))]);
+      setPlayersData([...data.sort((a, b) => b.name.localeCompare(a.name))]);
     }
   }, [sortByName]);
 
   useEffect(() => {
     if (sortByPoints) {
-      setPlayersData([...players.sort((a, b) => a.points - b.points).reverse()]);
+      setPlayersData([...data.sort((a, b) => a.points - b.points).reverse()]);
     } else if (!sortByPoints) {
-      setPlayersData([...players.sort((a, b) => a.points - b.points)]);
+      setPlayersData([...data.sort((a, b) => a.points - b.points)]);
     }
   }, [sortByPoints]);
 
