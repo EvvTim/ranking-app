@@ -61,121 +61,121 @@ const players = [
   },
   {
     id: 11,
-    name: 'shaquille.oatmeal',
+    name: 'Bestie',
     points: 0,
     color: '#fadadd'
   },
   {
     id: 12,
-    name: 'hoosier-daddy',
+    name: 'BFF',
     points: 0,
     color: '#052522'
   },
   {
     id: 13,
-    name: 'averagestudent',
+    name: 'Queen',
     points: 0,
     color: '#ff4f00'
   },
   {
     id: 14,
-    name: 'cute.as.ducks',
+    name: 'Senorita',
     points: 0,
     color: '#00a2ff'
   },
   {
     id: 15,
-    name: 'JohnSmith',
+    name: 'Girly',
     points: 0,
     color: '#badbad'
   },
   {
     id: 16,
-    name: 'VasiaPupkin',
+    name: 'Gal',
     points: 0,
     color: 'tomato'
   },
   {
     id: 17,
-    name: 'JanKowalski',
+    name: 'FriendForLife',
     points: 0,
     color: 'fuchsia'
   },
   {
     id: 18,
-    name: 'xxx',
+    name: 'SoulSister',
     points: 0,
     color: '#d299ef'
   },
   {
     id: 19,
-    name: 'yyy',
+    name: 'Sis',
     points: 0,
     color: '#4b5320'
   },
   {
     id: 20,
-    name: 'HairyPoppins',
+    name: 'Chica',
     points: 0,
     color: '#69e3ff'
   },
   {
     id: 21,
-    name: 'shaquille.oatmeal',
+    name: 'Nugget',
     points: 0,
     color: '#fadadd'
   },
   {
     id: 22,
-    name: 'hoosier-daddy',
+    name: 'Cobra',
     points: 0,
     color: '#052522'
   },
   {
     id: 23,
-    name: 'averagestudent',
+    name: 'SpiderFingers',
     points: 0,
     color: '#ff4f00'
   },
   {
     id: 24,
-    name: 'cute.as.ducks',
+    name: 'PinkyBoy',
     points: 0,
     color: '#00a2ff'
   },
   {
     id: 25,
-    name: 'JohnSmith',
+    name: 'CandyCorn',
     points: 0,
     color: '#badbad'
   },
   {
     id: 26,
-    name: 'VasiaPupkin',
+    name: 'RattleSnake',
     points: 0,
     color: 'tomato'
   },
   {
     id: 27,
-    name: 'JanKowalski',
+    name: 'hakuna_matata',
     points: 0,
     color: 'fuchsia'
   },
   {
     id: 28,
-    name: 'xxx',
+    name: 'hugs_for_all',
     points: 0,
     color: '#d299ef'
   },
   {
     id: 29,
-    name: 'yyy',
+    name: 'monkey_see',
     points: 0,
     color: '#4b5320'
   },
   {
     id: 30,
-    name: 'HairyPoppins',
+    name: 'my_name_is_in_use',
     points: 0,
     color: '#69e3ff'
   }
