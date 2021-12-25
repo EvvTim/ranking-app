@@ -86,8 +86,14 @@ tbody tr:last-child {
 }
 
 .header-name-cell,
-.header-points-cell{
+.header-points-cell,
+.header-position-cell{
     position: relative;
+    user-select: none;
+}
+
+.header-position-cell {
+    width: 50px;
 }
 
 .arrow {
@@ -98,16 +104,20 @@ tbody tr:last-child {
 }
 
 .header-name-cell:hover,
-.header-points-cell:hover{
+.header-points-cell:hover,
+.header-position-cell:hover {
     background-color: #167f92a3;
 }
 
 .header-name-cell:hover .arrow,
 .header-name-cell:focus .arrow,
 .header-points-cell:hover .arrow,
-.header-points-cell:focus .arrow {
+.header-points-cell:focus .arrow,
+.header-position-cell:hover .arrow,
+.header-position-cell:focus .arrow {
     color: white;
 }
+
 
 .search-bar-section{
     display: flex;
