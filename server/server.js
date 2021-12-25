@@ -12,12 +12,12 @@ app.get('/', (req, res) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.json([...players].sort((a, b) => b.points - a.points));
+  res.json([...players]);
   res.end();
 });
 
 setInterval(() => {
-  io.emit('newData', addPoints(players, randomPoints(0, 9)));
+  io.emit('newData', addPoints([...players], randomPoints(0, 9)));
 }, 1000);
 
 server.listen(9999, (err) => {
