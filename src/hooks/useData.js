@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import socket from '../socket';
+import addPosition from '../Table/addPosition';
 
 const useData = () => {
   const [data, setData] = useState([]);
+  const updatedData = addPosition(data);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +31,7 @@ const useData = () => {
     socket.on('newData', updateData);
   }, []);
 
-  return data;
+  return updatedData;
 };
 
 export default useData;

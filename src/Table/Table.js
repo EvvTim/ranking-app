@@ -5,19 +5,29 @@ import TablePages from './TablePages';
 import useSort from '../hooks/useSort';
 import useSortByName from '../hooks/useSortByName';
 import useSortByPoints from '../hooks/useSortByPoints';
+import useSortByPosition from '../hooks/useSortByPosition';
+import chooseSort from './chooseSort';
 
 const Table = ({ data, rowsPerPage }) => {
-  const [sortFlag, setSortFlag] = useState(false);
+  const [sortFlag, setSortFlag] = useState('');
   const [page, setPage] = useState(1);
 
-  const { sortByPointsHandler, sortByNameHandler, sortByName, sortByPoints } = useSort(data);
+  const {
+    sortByPositionHandler,
+    sortByPointsHandler,
+    sortByNameHandler,
+    sortByName,
+    sortByPoints,
+    sortByPosition
+  } = useSort(data);
+
   const sortByNameData = useSortByName(sortByName, data);
   const sortByPointsData = useSortByPoints(sortByPoints, data);
-  const { tableRows, range } = useTable(
-    sortFlag ? sortByNameData : sortByPointsData,
-    page,
-    rowsPerPage
-  );
+  const sortByPositionData = useSortByPosition(sortByPosition, data);
+
+  const sortData = chooseSort(sortFlag, sortByNameData, sortByPointsData, sortByPositionData, data);
+
+  const { tableRows, range } = useTable(sortData, page, rowsPerPage);
 
   return (
     <section className="table-section">
@@ -25,9 +35,18 @@ const Table = ({ data, rowsPerPage }) => {
         <thead>
           <tr>
             <th
+              className="header-position-cell"
+              onClick={() => {
+                sortByPositionHandler();
+                setSortFlag('position');
+              }}>
+              <span>#</span>
+              <span className="arrow">{sortByPosition ? '↑' : '↓'}</span>
+            </th>
+            <th
               onClick={() => {
                 sortByNameHandler();
-                setSortFlag(true);
+                setSortFlag('name');
               }}
               className="header-name-cell">
               <span>Name</span> <span className="arrow">{sortByName ? '↑' : '↓'}</span>
@@ -35,7 +54,7 @@ const Table = ({ data, rowsPerPage }) => {
             <th
               onClick={() => {
                 sortByPointsHandler();
-                setSortFlag(false);
+                setSortFlag('points');
               }}
               className="header-points-cell">
               <span>Points</span>
@@ -47,6 +66,7 @@ const Table = ({ data, rowsPerPage }) => {
         <tbody>
           {tableRows.map((el) => (
             <tr key={uniqid()}>
+              <td className="position-cell">{el.position}</td>
               <td className="name-cell">{el.name}</td>
               <td className="points-cell">{el.points}</td>
               <td className="color-cell" style={{ backgroundColor: el.color }} />
