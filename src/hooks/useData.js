@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import socket from '../socket';
+import addPosition from '../Table/addPosition';
 
 const useData = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const updatedData = addPosition(data);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('http://localhost:9999');
       const json = await response.json();
       setData(json);
-      setLoading(false);
     };
     fetchData();
   }, []);
@@ -31,7 +31,7 @@ const useData = () => {
     socket.on('newData', updateData);
   }, []);
 
-  return { data, loading };
+  return updatedData;
 };
 
 export default useData;
