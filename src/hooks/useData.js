@@ -3,14 +3,12 @@ import socket from '../socket';
 
 const useData = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('http://localhost:9999');
       const json = await response.json();
       setData(json);
-      setLoading(false);
     };
     fetchData();
   }, []);
@@ -31,7 +29,7 @@ const useData = () => {
     socket.on('newData', updateData);
   }, []);
 
-  return { data, loading };
+  return data;
 };
 
 export default useData;

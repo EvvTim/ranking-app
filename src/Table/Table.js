@@ -2,22 +2,44 @@ import React, { useState } from 'react';
 import uniqid from 'uniqid';
 import useTable from '../hooks/useTable';
 import TablePages from './TablePages';
+import useSort from '../hooks/useSort';
+import useSortByName from '../hooks/useSortByName';
+import useSortByPoints from '../hooks/useSortByPoints';
 
-const Table = ({ data, rowsPerPage, sortByName, sortByPoints, nameCellArrow, pointsCellArrow }) => {
+const Table = ({ data, rowsPerPage }) => {
+  const [sortFlag, setSortFlag] = useState(false);
   const [page, setPage] = useState(1);
-  const { tableRows, range } = useTable(data, page, rowsPerPage);
+
+  const { sortByPointsHandler, sortByNameHandler, sortByName, sortByPoints } = useSort(data);
+  const sortByNameData = useSortByName(sortByName, data);
+  const sortByPointsData = useSortByPoints(sortByPoints, data);
+  const { tableRows, range } = useTable(
+    sortFlag ? sortByNameData : sortByPointsData,
+    page,
+    rowsPerPage
+  );
 
   return (
     <section className="table-section">
       <table>
         <thead>
           <tr>
-            <th onClick={sortByName} className="header-name-cell">
-              <span>Name</span> <span className="arrow">{nameCellArrow}</span>
+            <th
+              onClick={() => {
+                sortByNameHandler();
+                setSortFlag(true);
+              }}
+              className="header-name-cell">
+              <span>Name</span> <span className="arrow">{sortByName ? '↑' : '↓'}</span>
             </th>
-            <th onClick={sortByPoints} className="header-points-cell">
+            <th
+              onClick={() => {
+                sortByPointsHandler();
+                setSortFlag(false);
+              }}
+              className="header-points-cell">
               <span>Points</span>
-              <span className="arrow">{pointsCellArrow}</span>
+              <span className="arrow">{sortByPoints ? '↑' : '↓'}</span>
             </th>
             <th>Color</th>
           </tr>
