@@ -7,6 +7,7 @@ import useSortByName from '../hooks/useSortByName';
 import useSortByPoints from '../hooks/useSortByPoints';
 import useSortByPosition from '../hooks/useSortByPosition';
 import chooseSort from './chooseSort';
+import addArrow from './addArrow';
 
 const Table = ({ data, rowsPerPage }) => {
   const [sortFlag, setSortFlag] = useState('');
@@ -24,9 +25,7 @@ const Table = ({ data, rowsPerPage }) => {
   const sortByNameData = useSortByName(sortByName, data);
   const sortByPointsData = useSortByPoints(sortByPoints, data);
   const sortByPositionData = useSortByPosition(sortByPosition, data);
-
   const sortData = chooseSort(sortFlag, sortByNameData, sortByPointsData, sortByPositionData, data);
-
   const { tableRows, range } = useTable(sortData, page, rowsPerPage);
 
   return (
@@ -41,7 +40,7 @@ const Table = ({ data, rowsPerPage }) => {
                 setSortFlag('position');
               }}>
               <span>#</span>
-              <span className="arrow">{sortByPosition ? '↑' : '↓'}</span>
+              <span className="arrow">{addArrow(sortByPosition)}</span>
             </th>
             <th
               onClick={() => {
@@ -49,7 +48,7 @@ const Table = ({ data, rowsPerPage }) => {
                 setSortFlag('name');
               }}
               className="header-name-cell">
-              <span>Name</span> <span className="arrow">{sortByName ? '↑' : '↓'}</span>
+              <span>Name</span> <span className="arrow">{addArrow(sortByName)}</span>
             </th>
             <th
               onClick={() => {
@@ -58,9 +57,9 @@ const Table = ({ data, rowsPerPage }) => {
               }}
               className="header-points-cell">
               <span>Points</span>
-              <span className="arrow">{sortByPoints ? '↑' : '↓'}</span>
+              <span className="arrow">{addArrow(sortByPoints)}</span>
             </th>
-            <th>Color</th>
+            <th className="header-color-cell">Color</th>
           </tr>
         </thead>
         <tbody>

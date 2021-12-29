@@ -93,7 +93,18 @@ tbody tr:last-child {
 }
 
 .header-position-cell {
-    width: 50px;
+    width: 30px;
+}
+
+
+.header-color-cell {
+    width: 30px;
+}
+
+.header-points-cell {
+    width: 70px;
+    align-self: center;
+
 }
 
 .arrow {
